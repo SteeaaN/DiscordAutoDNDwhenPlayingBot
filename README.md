@@ -33,7 +33,9 @@
   - Paste the copied ID after `log_channel_id = `  
   - Right-click on yourself in the member list -> Copy ID  
   - Paste the copied ID after `user_id = `
-
+    
+  Then, update the `games` list in the same file with your desired games.
+  
   **Optional:** Increase the `delay` to reduce potential load.
 
   Then, in Discord, press **Ctrl + Shift + I** (for the app) or **F12** (for the browser). In the top of the opened panel, find the **Network** tab (may be hidden under two arrows).  
@@ -46,8 +48,6 @@
   Open the downloaded `dnd_status.txt` file, delete its content, paste the copied value, and save the file.
 
   Change your status to **Online** and similarly change the `online_status.txt` file.
-
-  Then, update the `games` list in the same file with your desired games.
 </details>
 
 <details>
