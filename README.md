@@ -88,6 +88,7 @@
   <summary>Step 9 - Start the bot</summary>
   
   Run the bot using the 'bot.py' file.
+  **Make sure to run the bot from the directory where the bot files are located.**
 
 </details>
 
