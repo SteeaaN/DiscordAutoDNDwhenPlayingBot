@@ -1,5 +1,7 @@
 # DiscordAutoDNDwhenPlaying
 
+## Setting Up
+
 <details>
   <summary>Step 1 - Download the bot source files</summary>
 
@@ -32,7 +34,7 @@
   - Right-click on yourself in the member list -> Copy ID  
   - Paste the copied ID after `user_id = `
 
-  **Optional:** Increase the delay to reduce potential load.
+  **Optional:** Increase the `delay` to reduce potential load.
 
   Then, in Discord, press **Ctrl + Shift + I** (for the app) or **F12** (for the browser). In the top of the opened panel, find the **Network** tab (may be hidden under two arrows).  
   Change your status to **DND**. Find a line with `1` in the **Name** column and click on it.  
@@ -40,9 +42,10 @@
 
   Open the downloaded `auth_token.txt` file, delete its content, paste the copied value, and save the file.  
 
-  In the **Payload** section of the same request, copy the value of `settings` without quotes. Go back to `const.py` and replace the value after `dnd_status = ` with the copied value between single quotes.  
+  In the **Payload** section of the same request, copy the value of `settings` without quotes.
+  Open the downloaded `dnd_status.txt` file, delete its content, paste the copied value, and save the file.
 
-  Change your status to **Online** and similarly change the value for `online_status`.
+  Change your status to **Online** and similarly change the `online_status.txt` file.
 
   Then, update the `games` list in the same file with your desired games.
 </details>
@@ -87,3 +90,31 @@
   Run the bot using the 'bot.py' file.
 
 </details>
+
+## Commands
+
+- Every time you change the bot token, use the command:  
+  ```bash
+  /token your_new_token_without_quote
+  ```
+- Every time you change the status (text and emoji), use the following commands:
+  ```bash
+  /online_status your_new_online_status
+  ```
+  
+  ```bash
+  /dnd_status your_new_dnd_status
+  ```
+  
+**P.S.** Check Step 4
+
+
+
+
+
+
+
+
+
+
+  
