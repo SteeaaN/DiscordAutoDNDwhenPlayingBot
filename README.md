@@ -106,7 +106,7 @@
   /dnd_status your_new_dnd_status_without_quote
   ```
   
-**P.S.** Check Step 4
+**P.S.** Check step 4 to get the correct values
 
 
 
