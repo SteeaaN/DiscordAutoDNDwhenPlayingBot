@@ -1,5 +1,4 @@
 import requests
-from const import online_status, dnd_status
 
 
 class Info:
@@ -13,21 +12,25 @@ def write(name, content):
         file.write(content)
 
 
-def read(name):
+def read(name) -> str:
     with open(f'{name}', 'r', encoding='utf-8') as file:
         return file.read()
 
 
-def change_status(auth, new):
+def change_status(new) -> bool:
+    auth = read('auth_token.txt')
     if new == 1:  # online
-        st = online_status
+        st = read('online_status.txt')
     else:  # dnd
-        st = dnd_status
+        st = read('dnd_status.txt')
     headers = {
         'authorization': auth
         }
     json_data = {
         'settings': st
     }
-    requests.patch('https://discord.com/api/v9/users/@me/settings-proto/1', headers=headers, json=json_data)
+    req = requests.patch('https://discord.com/api/v9/users/@me/settings-proto/1', headers=headers, json=json_data)
+    if req.status_code != 200:
+        return False
+    return True
 

@@ -1,7 +1,7 @@
 import disnake
 from disnake.ext import commands, tasks
 from const import user_id, games, log_channel_id, bot_token, guild_id, delay
-from funcs import Info, write, read, change_status
+from funcs import Info, write, change_status
 
 p = Info()
 command_sync_flags = commands.CommandSyncFlags.default()
@@ -24,30 +24,51 @@ async def auth_token(inter, token: str):
     await inter.response.send_message("Done")
 
 
+@client.slash_command(name='online_status', description='change online status')
+async def auth_token(inter, token: str):
+    if inter.author.id != user_id:
+        return
+    write('online_status.txt', token)
+    await inter.response.send_message("Done")
+
+
+@client.slash_command(name='dnd_status', description='change dnd status')
+async def auth_token(inter, token: str):
+    if inter.author.id != user_id:
+        return
+    write('dnd_status.txt', token)
+    await inter.response.send_message("Done")
+
+
 @tasks.loop(seconds=delay)
 async def main_loop():
     try:
         guild = client.get_guild(guild_id)
         member = guild.get_member(user_id)
         act = member.activities
-        auth = read('auth_token.txt')
         try:
             game = act[1].name
             if game in games:
                 if p.dnd:
-                    change_status(auth, 0)
+                    if not change_status(0):
+                        await client.get_channel(log_channel_id).send('error changing status')
+                        return
                     await client.get_channel(log_channel_id).send('dnd successful')
                     p.onl = True
                 p.dnd = False
             else:
                 if p.onl:
-                    change_status(auth, 1)
+                    if not change_status(1):
+                        await client.get_channel(log_channel_id).send('error changing status')
+                        return
                     await client.get_channel(log_channel_id).send('online successful')
                     p.dnd = True
                 p.onl = False
         except IndexError:
             if p.onl:
-                change_status(auth, 1)
+                if not change_status(1):
+                    await client.get_channel(log_channel_id).send('error changing status')
+                    return
                 await client.get_channel(log_channel_id).send('online successful')
                 p.dnd = True
             p.onl = False
