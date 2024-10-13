@@ -17,8 +17,8 @@
 <details>
   <summary>Step 3 - Create a Discord server</summary>
 
-  A basic server with one text channel for logs is enough.  
-  **P.S.** If you want the Active Developer Badge, you can create a community server and use the `/ping` command once every 30 days.  
+  A basic server with one text channel for logs is enough.
+  **P.S. If you want the Active Developer Badge, you can create a community server and use the `/ping` command once every 30 days.**
   More details [here](https://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge).
 </details>
 
@@ -87,10 +87,17 @@
 <details> 
   <summary>Step 9 - Start the bot</summary>
   
-  Run the bot using the 'bot.py' file.
+  Run the bot using the `bot.py` file.
+  
   **Make sure to run the bot from the directory where the bot files are located.**
 
 </details>
+
+**Make sure your activity is visible in your profile.**
+
+**If not, go to Discord settings -> Activity Privacy -> enable "Share your detected activities with others."**
+
+**Also, in the Registered Games tab, check that detection for a specific game is not toggled off.**
 
 ## Commands
 
@@ -107,7 +114,7 @@
   /dnd_status your_new_dnd_status_without_quote
   ```
   
-**P.S.** Check step 4 to get the correct values
+**P.S. Check step 4 to get the correct values**
 
 
 
