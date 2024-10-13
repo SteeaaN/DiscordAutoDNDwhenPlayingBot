@@ -93,17 +93,17 @@
 
 ## Commands
 
-- Every time you change the bot token, use the command:  
+- Every time your token changes, use the command:  
   ```bash
   /token your_new_token_without_quote
   ```
 - Every time you change the status (text and emoji), use the following commands:
   ```bash
-  /online_status your_new_online_status
+  /online_status your_new_online_status_without_quote
   ```
   
   ```bash
-  /dnd_status your_new_dnd_status
+  /dnd_status your_new_dnd_status_without_quote
   ```
   
 **P.S.** Check Step 4
